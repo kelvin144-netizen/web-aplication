@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #0056b3;
+            text-align: center;
+        }
+
+        .search-bar {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .resource-category {
+            margin-bottom: 30px;
+        }
+
+        .resource-category h2 {
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .resource {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .resource a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resource a:hover {
+            text-decoration: underline;
+        }
+
+        .resource p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resource Page</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search resources..." id="searchInput">
+        </div>
+
+        <div class="resource-category">
+            <h2>Healthcare Resources</h2>
+            <div class="resource">
+                <a href="https://portal.mtrh.go.ke/" target="_blank">MTRH Portal</a>
+                <p>A platform designed to enhance service delivery in the healthcare sector.</p>
+            </div>
+            <div class="resource">
+                <a href="#" target="_blank">Healthcare Resource 2</a>
+                <p>Description of the resource.</p>
+            </div>
+        </div>
+
+        <div class="resource-category">
+            <h2>Knowledge Platforms</h2>
+            <div class="resource">
+                <a href="https://charter.africa/knowledge/explainers" target="_blank">Charter Africa Knowledge Platform</a>
+                <p>Access to in-depth explainers, tools, and resources for knowledge sharing across Africa.</p>
+            </div>
+            <div class="resource">
+                <a href="#" target="_blank">Knowledge Platform 2</a>
+                <p>Description of the resource.</p>
+            </div>
+        </div>
+
+        <div class="resource-category">
+            <h2>Other Resources</h2>
+            <div class="resource">
+                <a href="#" target="_blank">Resource 1</a>
+                <p>Description of the resource.</p>
+            </div>
+            <div class="resource">
+                <a href="#" target="_blank">Resource 2</a>
+                <p>Description of the resource.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function () {
+            const filter = searchInput.value.toLowerCase();
+            const resources = document.querySelectorAll('.resource');
+
+            resources.forEach(resource => {
+                const text = resource.textContent.toLowerCase();
+                if (text.includes(filter)) {
+                    resource.style.display = '';
+                } else {
+                    resource.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
